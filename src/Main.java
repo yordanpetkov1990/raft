@@ -13,7 +13,7 @@ public class Main {
 
         weightOfGoats.sort(Integer::compareTo);
         Collections.reverse(weightOfGoats);
-        int finalSum = 0;
+        int finalSum = minumumWeightPerCourse;
 
 
         while (K > 0){
