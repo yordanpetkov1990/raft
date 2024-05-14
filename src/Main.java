@@ -13,14 +13,17 @@ public class Main {
 
         weightOfGoats.sort(Integer::compareTo);
         Collections.reverse(weightOfGoats);
-        int finalSum = minumumWeightPerCourse;
+        int finalSum = weightOfGoats.stream().max(Integer::compareTo).get();
 
 
-        while (K > 0){
+        while (K > 0 && !weightOfGoats.isEmpty()){
             Iterator<Integer> iterator = weightOfGoats.iterator();
 
             if(K == 1){
-                finalSum = weightOfGoats.stream().mapToInt(Integer::intValue).sum();
+                int leftOver = weightOfGoats.stream().mapToInt(Integer::intValue).sum();
+                if(finalSum < leftOver){
+                    finalSum = weightOfGoats.stream().mapToInt(Integer::intValue).sum();
+                }
                 break;
             }
 
