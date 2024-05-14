@@ -22,7 +22,7 @@ public class Main {
             if(K == 1){
                 int leftOver = weightOfGoats.stream().mapToInt(Integer::intValue).sum();
                 if(finalSum < leftOver){
-                    finalSum = weightOfGoats.stream().mapToInt(Integer::intValue).sum();
+                    finalSum = leftOver;
                 }
                 break;
             }
