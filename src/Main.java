@@ -10,6 +10,7 @@ public class Main {
         int K = Integer.parseInt(tokens[1]);
         List<Integer> weightOfGoats = new ArrayList<>(Arrays.stream(scanner.nextLine().split("\\s+")).map(Integer::parseInt).toList());
         int minumumWeightPerCourse = weightOfGoats.stream().mapToInt(Integer::intValue).sum() / K;
+        int startValue = minumumWeightPerCourse;
 
         weightOfGoats.sort(Integer::compareTo);
         Collections.reverse(weightOfGoats);
@@ -39,6 +40,7 @@ public class Main {
                 }
             }
             K--;
+            minumumWeightPerCourse = startValue;
         }
         System.out.println(finalSum);
 
